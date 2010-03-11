@@ -3,11 +3,11 @@ module chat {
 		void update(in string nick, in string text);
 	};
 	exception NameAlreadyUsed {};
-	exception UnkownID {};
+	exception UnknownID {};
 	interface ChatServer {
 		string subscribe(in string nick, in ChatClient c) 
 			raises (NameAlreadyUsed);
-		void unsubscribe(in string id) raises (UnkownID);
+		void unsubscribe(in string id) raises (UnknownID);
 		void comment(in string id, in string text) raises (UnknownID);
 	};
 };
