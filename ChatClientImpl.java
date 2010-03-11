@@ -1,4 +1,3 @@
-
 import org.omg.CORBA.*;
 import chat.*;
 

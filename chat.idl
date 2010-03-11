@@ -1,16 +1,13 @@
-
 module chat {
-
-    interface ChatClient {
-	void update(in string nick, in string text);
-    };
-
-    exception NameAlreadyUsed {};
-    exception UnkownID {};
-    interface ChatServer {
-	string subscribe(in string nick, in ChatClient c) 
-	    raises (NameAlreadyUsed);
-	void unsubscribe(in string id) raises (UnkownID);
-	void comment(in string id, in string text) raises (UnknownID);
-    };
+	interface ChatClient {
+		void update(in string nick, in string text);
+	};
+	exception NameAlreadyUsed {};
+	exception UnkownID {};
+	interface ChatServer {
+		string subscribe(in string nick, in ChatClient c) 
+			raises (NameAlreadyUsed);
+		void unsubscribe(in string id) raises (UnkownID);
+		void comment(in string id, in string text) raises (UnknownID);
+	};
 };
