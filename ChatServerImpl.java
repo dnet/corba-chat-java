@@ -27,7 +27,7 @@ public class ChatServerImpl extends chat.ChatServerPOA {
 	}
 
 	public void unsubscribe(String id) throws chat.UnknownID {
-		System.out.println("ubsubscribe: " + id);
+		System.out.println("unsubscribe: " + id);
 		Client c = clients.remove(id);
 		if (c == null) throw new chat.UnknownID();
 		nicks.remove(c.nick);
