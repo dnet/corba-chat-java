@@ -53,10 +53,11 @@ public class Client implements Runnable {
 					chatserver.comment(id, s);
 				}
 			} finally {
-				t.interrupt();
 				System.out.print("Unsubscribing...");
 				chatserver.unsubscribe(id);
 				System.out.println(" done");
+				orb.destroy();
+				t.join();
 			}
 		} catch(Exception e) {
 			e.printStackTrace(System.out);
